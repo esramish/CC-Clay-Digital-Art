@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CC-Clay-Digital-Art';
+  img_indices = [...Array(2).keys()];
 }
