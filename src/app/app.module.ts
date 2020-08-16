@@ -6,6 +6,7 @@ import { ImagePartComponent } from './image-part/image-part.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContentDialogComponent } from './content-dialog/content-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ElevationDirective } from './elevation.directive';
 
 @NgModule({
   entryComponents: [
@@ -14,7 +15,8 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [
     AppComponent,
     ImagePartComponent,
-    ContentDialogComponent
+    ContentDialogComponent,
+    ElevationDirective
   ],
   imports: [
     BrowserModule,
