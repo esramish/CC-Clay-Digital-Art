@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ContentDialogComponent } from '../content-dialog/content-dialog.component';
 
 @Component({
   selector: 'app-image-part',
@@ -9,9 +11,15 @@ export class ImagePartComponent implements OnInit {
 
   @Input() img_index: number;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog(): void {
+    this.dialog.open(ContentDialogComponent, {
+      data: {index: this.img_index}
+    });
   }
 
 }
