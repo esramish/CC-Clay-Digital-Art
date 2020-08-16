@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CC-Clay-Digital-Art"
+    }
+  },
+  "defaultProject": "CC-Clay-Digital-Art",
+  "cli": {
+    "analytics": "8facb0f2-edec-4728-a74a-4d6e90b3a78c"
+  }
 }
