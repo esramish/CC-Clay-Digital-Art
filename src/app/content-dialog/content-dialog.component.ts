@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ContentDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<ContentDialogComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data: {index: number}) { }
+    @Inject(MAT_DIALOG_DATA) public data: {contentHtml: string}) { }
 
   ngOnInit(): void {
   }

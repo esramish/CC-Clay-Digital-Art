@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ContentDialogComponent } from '../content-dialog/content-dialog.component';
 import { ElevationDirective } from '../elevation.directive';
+import { ContentHtmlService } from '../content-html.service';
 
 @Component({
   selector: 'app-image-part',
@@ -10,19 +11,22 @@ import { ElevationDirective } from '../elevation.directive';
 })
 export class ImagePartComponent implements OnInit {
 
-  @Input() img_index: number;
+  contentHtml: string;
+  
+  @Input() imgName: string;
 
   @ViewChild(ElevationDirective) elevDirective;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public contentHtmlService: ContentHtmlService) { }
 
   ngOnInit(): void {
+    this.contentHtml = this.contentHtmlService.getContentHtml(this.imgName);
   }
 
   openDialog(): void {
     this.elevDirective.onMouseLeave();
     this.dialog.open(ContentDialogComponent, {
-      data: {index: this.img_index}
+      data: {contentHtml: this.contentHtml}
     });
   }
 

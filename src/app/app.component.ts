@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ContentHtmlService } from './content-html.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  img_indices = [...Array(2).keys()];
+  
+  imgNames: string[];
+  
+  constructor (public contentHtmlService: ContentHtmlService) {
+    this.imgNames = contentHtmlService.getClickableImgNames();
+  }
 }
